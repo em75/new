@@ -1,20 +1,17 @@
-name: Example GitHub Action
+name: Example Workflow with Email in Step Name
 
 on:
-  # This triggers the action when manually started
-  workflow_dispatch:
-  # This triggers the action based on a schedule
-  schedule:
-    - cron: "0 12 * * *"  # Runs daily at 12:00 UTC
+  workflow_dispatch:  # Allows you to manually trigger the workflow
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest  # Use Ubuntu runner for this job
+
     steps:
       # Step 1: Checkout the repository
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Run a command with your email address in the step name
-      - name: 22f2000918@ds.study.iitm.ac.in
-        run: echo "Hello, world!"
+      # Step 2: Step with your email address in the name
+      - name: 22f2000918@ds.study.iitm.ac.in  # Email in the step name
+        run: echo "Hello, world!"  # This step runs a simple echo command
