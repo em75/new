@@ -1,0 +1,20 @@
+name: Example GitHub Action
+
+on:
+  # This triggers the action when manually started
+  workflow_dispatch:
+  # This triggers the action based on a schedule
+  schedule:
+    - cron: "0 12 * * *"  # Runs daily at 12:00 UTC
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Run a command with your email address in the step name
+      - name: 22f2000918@ds.study.iitm.ac.in
+        run: echo "Hello, world!"
